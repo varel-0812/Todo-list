@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✓</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-tasks"></i> Elegant Todo List</h1>
+            <p class="subtitle">Kelola tugas Anda dengan gaya yang elegan dan efisien</p>
+        </header>
+
+        <main class="main-content">
+            <div class="todo-input-section">
+                <div class="input-container">
+                    <input type="text" id="todoInput" placeholder="Tambahkan tugas baru...">
+                    <button id="addTodoBtn" class="btn-primary">
+                        <i class="fas fa-plus"></i> Tambah
+                    </button>
+                </div>
+                <div class="hint">
+                    <i class="fas fa-lightbulb"></i> Tekan Enter untuk menambahkan tugas dengan cepat
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="active">Aktif</button>
+                    <button class="filter-btn" data-filter="completed">Selesai</button>
+                </div>
+                <button id="clearCompletedBtn" class="btn-secondary">
+                    <i class="fas fa-trash-alt"></i> Hapus yang Selesai
+                </button>
+            </div>
+
+            <div class="todo-stats">
+                <div class="stats-card">
+                    <div class="stats-icon total">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stats-info">
+                        <span class="stats-count" id="totalCount">0</span>
+                        <span class="stats-label">Total Tugas</span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stats-info">
+                        <span class="stats-count" id="pendingCount">0</span>
+                        <span class="stats-label">Tugas Aktif</span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-icon completed">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stats-info">
+                        <span class="stats-count" id="completedCount">0</span>
+                        <span class="stats-label">Tuntas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="todo-list-container">
+                <div class="todo-list-header">
+                    <h2><i class="fas fa-list-ul"></i> Daftar Tugas</h2>
+                    <div class="sort-options">
+                        <select id="sortSelect">
+                            <option value="date-desc">Terbaru</option>
+                            <option value="date-asc">Terlama</option>
+                            <option value="alpha-asc">A-Z</option>
+                            <option value="alpha-desc">Z-A</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="todo-list" id="todoList">
+                    <!-- Todo items akan ditambahkan di sini oleh JavaScript -->
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Tidak ada tugas</h3>
+                        <p>Tambahkan tugas pertama Anda di atas</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2023 Elegant Todo List • Dibuat dengan <i class="fas fa-heart"></i></p>
+            <p class="footer-hint"><i class="fas fa-mouse-pointer"></i> Klik dua kali pada tugas untuk mengedit</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
